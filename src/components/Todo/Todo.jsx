@@ -129,7 +129,7 @@ const Todo = () => {
                 }
             </div>
             <div className='remove-all-btn'>
-                {/* <button onClick={()=>handleShowAll(ShowAll)}>{ShowAll? 'Show Finished':'Show All'}</button> */}
+               
                 <button onClick={()=>setTodoList([])} style={{display:TodoList.length>1?'flex':'none'}}>Remove All</button>
             </div>
         </div>
