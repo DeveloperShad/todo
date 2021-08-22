@@ -6,30 +6,43 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-   
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 header{
-    background: #111B20;
+    background: #172329;
 }
 
 nav{
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    padding: 15px 0;
     align-items: center;
-    gap:20px;
+    gap: 10vw;
    
   
 }
 
+@media screen and (max-width:600px) {
+    
+    nav{
+        justify-content: space-between;
+        margin: 0 5px;
+    }
+
+}
+
 nav button{
-    padding: 5px 10px;
+    padding: 10px 10px;
     cursor: pointer;
-    color:#111B20 ;
-    /* font-size: 20px; */
+    color:#172329 ;
+    /* font-size: 15px; */
     font-weight: bold;
     margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    text-shadow: #172329;
 }
 
 
@@ -63,26 +76,32 @@ nav button{
 }
 .todo-card{
     display: flex;
-    gap: 100px;
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
-    width: 500px;
+    width: 400px;
     padding: 10px;
+    gap: 10px;
 }
-/* .todo-card >*{
-    padding: 5px 10px;
-    border: none;
-} */
+.todo-card .task-title{
+    flex-basis: 60%;
+}
+.task-title{
+    display: flex;
+    text-align: justify;
+   
+}
+
+
 
 .todo-card .btn-container{
     display: flex;
     gap: 10px;
-    padding: 10px;
+    /* padding: 5px 10px; */
 }
 
 .btn-container button{
-    padding: 5px 10px;
+    padding: 5px 7px;
     border: none;
 }
 

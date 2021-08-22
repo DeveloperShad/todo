@@ -18,9 +18,8 @@ const Todo = () => {
     const [TodoList, setTodoList] = useState(GetLocalStorageData())
     const [EditToggle, setEditToggle] = useState(false)
     const [EditId, setEditId] = useState('')
-    const [ShowAll, setShowAll] = useState(false)
-    const [ShowFinished, setShowFinished] = useState(false)
-    const [ShowUnfinished, setShowUnfinished] = useState(false)
+    const [ShowAll, setShowAll] = useState('all')
+
 
 
     const handleChange = (e) => {
@@ -86,17 +85,13 @@ const Todo = () => {
         setTodoList(z)
     }
 
-    const handleShowAll = (x)=>{
-        setShowAll(!x)
-        if(TodoList.length === 0){
-            alert('No Task Present In The Array')
-        }
-    }
-
+  
     const handleTask = (x)=>{
-      setShowAll(!x)
-      setShowFinished(!x)
-      setShowUnfinished(!x)
+        
+        setShowAll(x)
+      
+     
+     
     }
 
     useEffect(() => {
@@ -113,9 +108,9 @@ const Todo = () => {
         <>
         <header>
             <nav>
-                <button onClick={()=>handleTask(ShowAll)}>Show All</button>
-                <button onClick={()=>handleTask(ShowFinished)}>Show Finished</button>
-                <button onClick={()=>handleTask(ShowUnfinished)}>Show Unfinished</button>
+                <button onClick={()=>handleTask('all')}>Show All</button>
+                <button onClick={()=>handleTask('finished')}>Show Finished</button>
+                <button onClick={()=>handleTask('unfinished')}>Show Unfinished</button>
             </nav>
         </header>
         <div className='container'>
@@ -124,7 +119,7 @@ const Todo = () => {
             </div>
             <div className='todo-container'>
                 {
-                    TodoList.filter(el=> ShowAll? el: ShowFinished? el.status:!el.status).map(el =>  {
+                    TodoList.filter(el=> ShowAll==='finished'? el.status: ShowAll=== 'unfinished'? !el.status: ShowAll==='all'? el:null).map(el =>  {
                         return  (
                             <div className='todo-card' key={el.id}>
                                 <TodoItem el = {el} handleEdit = {handleEdit} handleToggle = {handleToggle} handleDelete = {handleDelete}/>
@@ -134,8 +129,8 @@ const Todo = () => {
                 }
             </div>
             <div className='remove-all-btn'>
-                <button onClick={()=>handleShowAll(ShowAll)}>{ShowAll? 'Show Finished':'Show All'}</button>
-                <button onClick={()=>setTodoList([])}>Remove All</button>
+                {/* <button onClick={()=>handleShowAll(ShowAll)}>{ShowAll? 'Show Finished':'Show All'}</button> */}
+                <button onClick={()=>setTodoList([])} style={{display:TodoList.length>1?'flex':'none'}}>Remove All</button>
             </div>
         </div>
         </>
