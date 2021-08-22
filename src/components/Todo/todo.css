@@ -17,7 +17,7 @@ header{
 nav{
     display: flex;
     justify-content: center;
-    padding: 15px 0;
+    padding: 10px 0;
     align-items: center;
     gap: 10vw;
    
@@ -34,14 +34,13 @@ nav{
 }
 
 nav button{
-    padding: 10px 10px;
+    padding: 5px 5px;
     cursor: pointer;
     color:#172329 ;
     /* font-size: 15px; */
     font-weight: bold;
-    margin: 0 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     text-shadow: #172329;
 }
 
@@ -59,6 +58,7 @@ nav button{
 .input-container{
     display: flex;
     /* gap: 10px; */
+    /* margin: 0 0 50px 0; */
     justify-content: center;
 }
 .input-container > *{
@@ -79,7 +79,7 @@ nav button{
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
-    width: 400px;
+    width: 350px;
     padding: 10px;
     gap: 10px;
 }
@@ -101,7 +101,7 @@ nav button{
 }
 
 .btn-container button{
-    padding: 5px 7px;
+    padding: 5px 5px;
     border: none;
 }
 
@@ -114,5 +114,5 @@ nav button{
 
 button{
     cursor: pointer;
-    padding: 10px 20px;
+   
 }
