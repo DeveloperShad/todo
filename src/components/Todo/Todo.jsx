@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import { v4 as uuid } from 'uuid'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 import './todo.css'
 import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
